@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<header>
+    <h1>типу сайтік йоу</h1>
+    <nav>
+        <a href="#">логін</a>
+    </nav>
+</header>
+
     <h1>Add nav bar</h1>
     <form action="{% url 'home_page' %}" method="post">
         <input type="text" name="name">
