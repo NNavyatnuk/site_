@@ -2,9 +2,9 @@ body{
     background-color: aquamarine;
 }
 
-button {
-    background-color: #4CAF50; 
-    color: white;              
+.button_login {
+    background-color: aquamarine; 
+    color: rgb(0, 0, 0);              
     padding: 10px 20px;        
     border: none;            
     border-radius: 4px;       
@@ -12,9 +12,7 @@ button {
     cursor: pointer;          
 }
 
-button:hover {
-    background-color: #45a049; 
-}
+
 
 header {
     background-color: #333;       
