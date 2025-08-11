@@ -1,5 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: 0;
+}
+
+body{
+  height:100%;
+  background-color: black;
+  color:white;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  margin:0;
+  padding:0;
+}
+
 :root{
-  --bg: #0f1724;           /* темне тло сторінки */
+  --bg: #000000;           /* темне тло сторінки */
   --card: #0b1220;         /* фон картки */
   --muted: #94a3b8;        /* текст-підказки */
   --accent: #60a5fa;       /* акцент (кнопка, фокус) */
@@ -7,17 +27,6 @@
   --radius: 12px;
   --shadow: 0 10px 30px rgba(2,6,23,0.6);
   --glass: rgba(255,255,255,0.02);
-}
-
-html,body{
-  height:100%;
-  background: var(--bg);
-  color:var(--white);
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  margin:0;
-  padding:0;
 }
 
 /* центр сторінки */
@@ -28,6 +37,30 @@ html,body{
   justify-content:center;
   padding:32px;
 }
+
+.register-form {
+  position: relative;
+  padding: 28px;
+  border-radius: 14px;
+  background: var(--card); /* темний фон форми */
+}
+
+.register-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* товщина рамки */
+  border-radius: inherit;
+  background: linear-gradient(90deg,
+    red, orange, yellow, lime, cyan, blue, magenta, red);
+  background-size: 600% 600%;
+  animation: rgb-anim 6s linear infinite;
+  -webkit-mask-: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
 
 /* картка форми */
 .form-card{

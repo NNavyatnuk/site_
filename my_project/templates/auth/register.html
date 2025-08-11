@@ -1,20 +1,32 @@
 {% extends 'base.html' %}
 
+{%load static%}
+
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+
+<section>
   <div class="container-form">
     <div class="form-card">
-      <h1>Register</h1>
-      <form action="{% url 'register' %}" method="post" novalidate>
-        {% csrf_token %}
+      <div class="register-form">
+        <h1>Register</h1>
+        <form action="{% url 'register' %}" method="post" novalidate>
+          {% csrf_token %}
 
-        {{ form.as_p }}
+          {{ form.as_p }}
 
-        <input type="submit" value="Зареєструватися" class="btn">
-      </form>
+          <input type="submit" value="Зареєструватися" class="btn">
+        </form>
 
-      <div class="form-foot">
-        Вже маєте акаунт? <a href="{% url 'login' %}">Увійти</a>
+        <div class="form-foot">
+          Вже маєте акаунт? <a href="{% url 'login' %}">Увійти</a>
+        </div>
       </div>
     </div>
   </div>
+</section>
 {% endblock %}

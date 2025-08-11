@@ -13,13 +13,6 @@ body{
     font-style: normal;
 }
 
-/* .montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-} */
-
 .crumbs_h {
   position: fixed;
   top: -80px;
@@ -31,14 +24,12 @@ body{
   z-index: 1000;
   border: solid white 2px;
   border-radius: 10px;
-
   display: flex;
   flex-direction: row;        /* головне — горизонтально */
   justify-content: center;    /* центр для меню */
   align-items: center;
   box-sizing: border-box;
 }
-
 .crumbs_h.show {
   top: 0;
 }
@@ -59,8 +50,31 @@ body{
 }
 
 .crumbs_h a:hover {
-  color: red; 
+  color: black; 
 }
+
+.crumbs_h::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 14px;
+  background: linear-gradient(90deg,
+    red, orange, yellow, lime, cyan, blue, magenta, red);
+  background-size: 600% 600%;
+  animation: rgb-anim 6s linear infinite;
+  z-index: -1;
+  filter: blur(4px); /* м'яке світіння */
+}
+
+@keyframes rgb-anim {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 section{
     display: flex;
@@ -121,4 +135,8 @@ section{
   right: 20px; /* відступ від правого краю */
   top: 50%;
   transform: translateY(-50%);
+}
+
+.user_member a:hover {
+  color: black; 
 }
