@@ -1,10 +1,11 @@
-// const header = document.getElementById('header');
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.crumbs_h');
+    document.addEventListener('mousemove', (e) => {
+        if (e.clientY < 50) {
+            header.classList.add('show');
+        } else {
+            header.classList.remove('show');
+        }
+    });
+});
 
-// document.addEventListener('mousemove', (e) => {
-//   if (e.clientY < 50) {
-//     // якщо курсор у верхніх 50px екрану
-//     header.classList.add('show');
-//   } else {
-//     header.classList.remove('show');
-//   }
-// });

@@ -4,6 +4,7 @@
 
 {%block style%}
 <link rel="stylesheet" href="{% static 'css/login/login.css' %}">
+<script src="{% static 'css/style.js' %}"></script>
 {% endblock%}
 
 {% block content %}
@@ -14,11 +15,11 @@
          {% csrf_token %}
         
         <form>
-  <div class="mb-3">
+  <div class="login-search">
     <label for="exampleInputEmail1" class="form-label">Ім'я</label>
     <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
   </div>
-  <div class="mb-3">
+  <div class="login-search">
     <label for="exampleInputPassword1" class="form-label">Пароль</label>
     <input type="password" class="form-control" name="password">
   </div>

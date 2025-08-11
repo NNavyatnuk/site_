@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Register</h1>
-    <form action="{% url 'register' %}" method="post">
+  <div class="container-form">
+    <div class="form-card">
+      <h1>Register</h1>
+      <form action="{% url 'register' %}" method="post" novalidate>
         {% csrf_token %}
 
         {{ form.as_p }}
 
-        <input type="submit" value="Submit" class="btn btn-secondary">
-    </form>
-{% endblock%}
+        <input type="submit" value="Зареєструватися" class="btn">
+      </form>
+
+      <div class="form-foot">
+        Вже маєте акаунт? <a href="{% url 'login' %}">Увійти</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

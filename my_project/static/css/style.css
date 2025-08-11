@@ -6,20 +6,119 @@
 
 body{
     background-color: black;
-    color:white
+    color:white;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
 
+/* .montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
 
-.crumbs_h ul{
-    list-style: none;
-    padding: 0;
-    margin:0;
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    justify-content: space-between;
-    align-items: center;
+.crumbs_h {
+  position: fixed;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  background: black;
+  padding: 15px;
+  transition: top 0.4s ease;
+  z-index: 1000;
+  border: solid white 2px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;        /* головне — горизонтально */
+  justify-content: center;    /* центр для меню */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.crumbs_h.show {
+  top: 0;
+}
+
+.crumbs_h ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.crumbs_h a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s; 
+}
+
+.crumbs_h a:hover {
+  color: red; 
+}
+
+section{
     display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
 }
 
+.main-form{
+    position: relative;
+    background-color: black;
+    border: solid white 2px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+    align-items: center;
+    width: 400px;
+}
 
+.main-search{
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+}
+
+.main-search input{
+    width:200px;
+    background-color: white;
+    gap: 10px
+}
+
+.main-form::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 14px;
+  background: linear-gradient(90deg,
+    red, orange, yellow, lime, cyan, blue, magenta, red);
+  background-size: 600% 600%;
+  animation: rgb-anim 6s linear infinite;
+  z-index: -1;
+  filter: blur(4px); /* м'яке світіння */
+}
+
+@keyframes rgb-anim {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.user_member {
+  position: absolute;
+  right: 20px; /* відступ від правого краю */
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -5,14 +5,22 @@
     {% block style %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Підключення стилів -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Підключення шрифту з Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <!-- Підключення JS -->
+    <script src="{% static 'css/style.js' %}"></script>
     {% endblock %}
+
     {% include 'home/navbar.html' %}
     <title>Document</title>
 </head>
 <body>
-
-
     <div class="container">
         {% if messages %}
             {% for message in messages %}
@@ -21,6 +29,8 @@
         {% endif %}
         {% block content %}{% endblock %}
     </div>
-
 </body>
 </html>
+
+
+
