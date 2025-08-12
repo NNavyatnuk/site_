@@ -18,7 +18,8 @@ body{
   top: -80px;
   left: 0;
   width: 100%;
-  background: black;
+  position: relative;
+  background-color: black;
   padding: 15px;
   transition: top 0.4s ease;
   z-index: 1000;
@@ -66,14 +67,9 @@ body{
   background-size: 600% 600%;
   animation: rgb-anim 6s linear infinite;
   z-index: -1;
-  filter: blur(4px); /* м'яке світіння */
+  filter: blur(4px);
 }
 
-@keyframes rgb-anim {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 
 section{
