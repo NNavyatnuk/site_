@@ -13,8 +13,9 @@
 {% endblock%}
 <section>
 <div class="main-form">
-<h1>Сайт</h1>
+<h1>Site</h1>
 <form action="{% url 'home' %}" method="post">
+    <form action="{% url 'set_language' %}" method="post"></form>
     {% csrf_token %}
     <div class="main-search">
         <input type="text" name="name">

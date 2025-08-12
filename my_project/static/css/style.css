@@ -40,8 +40,6 @@ body{
   display: flex;
   gap: 20px;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 .crumbs_h a {
@@ -50,11 +48,11 @@ body{
   transition: 0.3s; 
 }
 
-.crumbs_h a:hover {
+/* .crumbs_h a:hover {
   color: black; 
-}
+} */
 
-.crumbs_h::before {
+/* .crumbs_h::before {
   content: "";
   position: absolute;
   top: -3px;
@@ -68,9 +66,7 @@ body{
   animation: rgb-anim 6s linear infinite;
   z-index: -1;
   filter: blur(4px);
-}
-
-
+} */
 
 section{
     display: flex;
@@ -136,3 +132,66 @@ section{
 .user_member a:hover {
   color: black; 
 }
+
+/* Контейнер мови */
+.language {
+  position: absolute;       /* розташування у шапці */
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  display: inline-block;    /* ширина під контент */
+  z-index: 999;
+}
+
+/* Поточна мова */
+.language .current {
+  display: block;
+  height: 25px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(255,255,255,0);
+}
+
+/* Список мов (початково прихований) */
+.language .lang-list {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  text-align: center;
+  position: absolute;
+  top: 100%;    /* прямо під .current */
+  left: 0;
+  min-width: 44px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 4px;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Елементи списку */
+.language .lang-list li {
+  padding: 6px 10px;
+  transition: background 0.3s ease;
+}
+
+.language .lang-list li:hover {
+  cursor: pointer;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+/* Показуємо при hover або класі open */
+.language:hover .lang-list,
+.language.open .lang-list {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
