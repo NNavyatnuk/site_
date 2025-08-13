@@ -92,6 +92,7 @@ section{
     display: flex;
     flex-direction:column;
     width: 100%;
+    align-items: center;
 }
 
 .main-search input{
@@ -121,6 +122,7 @@ section{
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 
 .user_member {
   position: absolute;

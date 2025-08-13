@@ -3,11 +3,14 @@
 {%load static%}
 
 {%block style%}
-<link rel="stylesheet" href="{% static 'css/login/login.css' %}">
-<script src="{% static 'css/style.js' %}"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+<!-- Підключення стилів -->
+    <link rel="stylesheet" href="{% static 'css/login/login.css' %}">
+<!-- Підключення шрифту з Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+<!-- Підключення JS -->
+    <script src="{% static 'css/style.js' %}"></script>
 {% endblock%}
 
 {% block content %}
@@ -15,8 +18,9 @@
 <div class="login-form">
     <h1>login</h1>
     <form action="{% url 'home' %}" method="post">
-         {% csrf_token %}
-        
+
+        {% csrf_token %}
+
         <form>
   <div class="login-search">
     <label for="exampleInputEmail1" class="form-label">Name</label>

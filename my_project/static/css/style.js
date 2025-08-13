@@ -1,4 +1,4 @@
-// плавне появлення хедеру
+// Плавне появлення хедеру
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.crumbs_h');
     document.addEventListener('mousemove', (e) => {
