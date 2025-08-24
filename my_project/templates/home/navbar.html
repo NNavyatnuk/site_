@@ -2,25 +2,34 @@
 
 <nav class="crumbs_h">
   <ul>
-    <form action="{% url 'set_language' %}" method="post"></form>
-    <li class="crumb"><a href="{% url 'home' %}">| Home |</a></li>
+    <!-- (цей form для Django i18n можна прибрати у JSON-варіанті) -->
+    <!-- <form action="{% url 'set_language' %}" method="post"></form> -->
+
+    <li class="crumb"><a href="{% url 'home' %}" data-key="home">| Home |</a></li>
     {% if user.is_authenticated %}
-      <li class="crumb"><a href="{% url 'logout' %}">| Logout |</a></li>
+      <li class="crumb"><a href="{% url 'logout' %}" data-key="logout">| Logout |</a></li>
     {% else %}
-      <li class="crumb"><a href="{% url 'register' %}">| Register |</a></li>
-      <li class="crumb"><a href="{% url 'login' %}">| Login |</a></li>
+      <li class="crumb"><a href="{% url 'register' %}" data-key="register">| Register |</a></li>
+      <li class="crumb"><a href="{% url 'login' %}" data-key="login">| Login |</a></li>
     {% endif %}
   </ul>
 
   <div class="language">
     <div class="current">EN</div>
     <ul class="lang-list">
-      <li data-lang="ua">UA</li>
+      <li data-lang="uk">UA</li>  
       <li data-lang="en">EN</li>
     </ul>
   </div>
 
   <div class="user_member">
-    <a href="{% url 'register' %}"><img src="{% static 'images/user_member.png' %}" alt="Logo" width="30" height="30"></a>
+    <a href="{% url 'register' %}">
+      <img src="{% static 'images/user_member.png' %}"
+          width="30" height="30"
+          alt="User profile"
+          title="User profile"
+          data-key-alt="user_icon"
+          data-key-title="user_icon">
+    </a>
   </div>
 </nav>

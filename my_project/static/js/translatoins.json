@@ -1,0 +1,14 @@
+{
+  "en": {
+    "home": "Home",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register"
+  },
+  "uk": {
+    "home": "Головна",
+    "login": "Увійти",
+    "logout": "Вийти",
+    "register": "Реєстрація"
+  }
+}

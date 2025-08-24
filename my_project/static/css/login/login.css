@@ -48,7 +48,25 @@ body{
   transition: 0.3s; 
 }
 
+/* .crumbs_h a:hover {
+  color: black; 
+} */
 
+/* .crumbs_h::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 14px;
+  background: linear-gradient(90deg,
+    red, orange, yellow, lime, cyan, blue, magenta, red);
+  background-size: 600% 600%;
+  animation: rgb-anim 6s linear infinite;
+  z-index: -1;
+  filter: blur(4px);
+} */
 
 section{
     display: flex;
@@ -74,6 +92,7 @@ section{
     display: flex;
     flex-direction:column;
     width: 100%;
+    align-items: center;
 }
 
 .login-search input{
@@ -104,6 +123,7 @@ section{
   100% { background-position: 0% 50%; }
 }
 
+
 .user_member {
   position: absolute;
   right: 20px; /* відступ від правого краю */
@@ -115,6 +135,7 @@ section{
   color: black; 
 }
 
+/* Контейнер мови */
 .language {
   position: absolute;       /* розташування у шапці */
   top: 50%;

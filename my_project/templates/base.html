@@ -2,35 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-{% block style %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Підключення стилів -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<!-- Підключення шрифту з Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-<!-- Підключення JS -->
-    <script src="{% static 'css/style.js' %}"></script>
-{% endblock %}
 
-    {% include 'home/navbar.html' %}
-    
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script>window.TRANSLATIONS_URL = "{% static 'js/translations.json' %}";</script>
+
+    {% block style %}{% endblock %}
 </head>
 <body>
-    <div class="container">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-warning">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-        {% block content %}{% endblock %}
-    </div>
+
+{% include 'home/navbar.html' %}
+
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+</div>
+
+<script src="{% static 'css/style.js' %}"></script>
 </body>
 </html>
-
-
-
